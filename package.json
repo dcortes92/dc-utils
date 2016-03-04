@@ -1,0 +1,27 @@
+{
+  "name": "dc-utils",
+  "version": "1.0.0",
+  "description": "JavaScript utilities.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcortes92/dc-utils.git"
+  },
+  "keywords": [
+    "javascript",
+    "utilities",
+    "dc"
+  ],
+  "author": "Daniel Cortes <dcortes1892@gmail.com> (http://dcortes92.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dcortes92/dc-utils/issues"
+  },
+  "homepage": "https://github.com/dcortes92/dc-utils#readme",
+  "dependencies": {
+    "unique-random-array": "1.0.0"
+  }
+}
