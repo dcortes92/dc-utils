@@ -26,7 +26,7 @@ describe('dc', function () {
             function isArraySorted(arr) {
                 return arr.some(function(element, index) {
                     return element === sorted[index]
-                });
+                })
             }
         })
     })
