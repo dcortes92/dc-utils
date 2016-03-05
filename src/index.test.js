@@ -17,7 +17,7 @@ describe('dc', function () {
             expect(dc.sortArray(arr)).to.have.lengthOf(arr.length)
         })
         it('should return an empty array if the argument passed is not an array', function () {
-            expect(dc.sortArray(42)).to.have.lengthOf(0);
+            expect(dc.sortArray(42)).to.have.lengthOf(0)
         })
         it('should return an ordered array if the argument passed is an array', function () {
             var sorted = [1, 2, 3]
