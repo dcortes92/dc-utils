@@ -14,7 +14,11 @@ function isArray (value) {
 }
 
 function sortArray (arr) {
-    return arr.sort(sortArrHandler)
+    if (isArray(arr)) {
+        return arr.sort(sortArrHandler)    
+    } else {
+        return []
+    }
 }
 
 function sortArrHandler (a, b) {
