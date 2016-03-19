@@ -1,5 +1,3 @@
-var uniqueRandomArray = require('unique-random-array');
-
 module.exports = {
   isArray: isArray,
   sort: sort,
