@@ -2,7 +2,8 @@ var uniqueRandomArray = require('unique-random-array');
 
 module.exports = {
   isArray: isArray,
-  sortArray: sortArray
+  sort: sort,
+  by: by
 }
 
 function isArray (value) {
@@ -13,7 +14,7 @@ function isArray (value) {
         !(value.propertyIsEnumerable('length'))
 }
 
-function sortArray (arr) {
+function sort (arr) {
     if (isArray(arr)) {
         return arr.sort(sortArrHandler)    
     } else {
@@ -31,4 +32,26 @@ function sortArrHandler (a, b) {
         return a < b ? -1 : 1
     }
     return typeof a < typeof b ? -1 : 1 
+}
+
+function by (n, m) {
+    return function (o, p) {
+        var a, b
+        if (o && p && typeof o === 'object' && typeof p === 'object') {
+            a = o[n]
+            b = p[n]
+            if (a === b) {
+                return typeof m === 'function' ? m(o, p) : 0
+            }
+            if (typeof a === typeof b) {
+                return a < b ? -1 : 1
+            }
+            return typeof a < typeof b ? -1 : 1
+        } else {
+            throw {
+                name: 'Error',
+                message: 'Expected an object when sorting by ' + n
+            }
+        }
+    }
 }
