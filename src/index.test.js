@@ -13,15 +13,15 @@ describe('dc', function () {
     
     describe('sort', function () {
         it('should return an array with the same length if the argument passed is an array', function () {
-            var arr = [7, 5, 3, 10, 6, 1 ,8];
+            var arr = [7, 5, 3, 10, 6, 3, 1 ,8, 'a'];
             expect(dc.sort(arr)).to.have.lengthOf(arr.length)
         })
         it('should return an empty array if the argument passed is not an array', function () {
             expect(dc.sort(42)).to.have.lengthOf(0)
         })
         it('should return an ordered array if the argument passed is an array', function () {
-            var sorted = [1, 2, 3]
-            var sortTest = dc.sort([3, 1, 2])
+            var sorted = [true, 1, 2, 3, 'a', 'b']
+            var sortTest = dc.sort([3, true, 'a', 1, 'b', 2])
             expect(sortTest).to.satisfy(isArraySorted)
             function isArraySorted(arr) {
                 return arr.some(function(element, index) {
@@ -37,11 +37,17 @@ describe('dc', function () {
                 { first: 'daniel', last: 'cortes' },
                 { first: 'tim', last: 'drake' },
                 { first: 'bruce', last: 'wayne' },
-                { first: 'kate', last: 'kane'}
+                { first: true, last: true },
+                { first: 'daniel', last: 'cortes' },
+                { first: 'kate', last: 'kane'},
+                { first: 42, last: 42}
             ]
             
             var sortedByFirst = [
+                { first: true, last: true },
+                { first: 42, last: 42},
                 { first: 'bruce', last: 'wayne' },
+                { first: 'daniel', last: 'cortes' },
                 { first: 'daniel', last: 'cortes' },
                 { first: 'kate', last: 'kane'},
                 { first: 'tim', last: 'drake' }
@@ -54,6 +60,15 @@ describe('dc', function () {
                     return element.first === sortedByFirst[index].first
                 })
             }
+        })
+        it('should throw an object with an error when the provided sorting element is not an object', function () {
+            var arr = ['a', 'b', 'c']
+            expect(function () {
+                arr.sort(dc.by('test'))
+            }).to.throw({
+                name: 'Error',
+                message: 'Expected an object when sorting by test'
+            })
         })
     })
 })
