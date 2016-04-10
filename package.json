@@ -24,16 +24,21 @@
     "url": "https://github.com/dcortes92/dc-utils/issues"
   },
   "homepage": "https://github.com/dcortes92/dc-utils#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "chai": "3.5.0",
     "commitizen": "2.6.1",
     "cz-conventional-changelog": "1.1.5",
+    "ghooks": "1.2.0",
     "mocha": "2.4.5",
     "semantic-release": "^4.3.5"
   },
   "czConfig": {
-      "path": "node_modules/cz-conventional-changelog"
+    "path": "node_modules/cz-conventional-changelog"
+  },
+  "config": {
+      "ghooks": {
+          "pre-commit": "npm run test:single"
+      }
   }
 }
