@@ -1,6 +1,10 @@
 # dc-utils
+[![Travis Build](https://img.shields.io/travis/dcortes92/dc-utils.svg?maxAge=2592000)](https://travis-ci.org/dcortes92/dc-utils)
+[![Codecov](https://img.shields.io/codecov/c/github/dcortes92/dc-utils.svg?maxAge=2592000)](https://codecov.io/github/dcortes92/dc-utils)
+[![npm](https://img.shields.io/npm/dm/dc-utils.svg?maxAge=2592000)](http://npm-stat.com/charts.html?package=dc-utils)
+[![npm](https://img.shields.io/npm/v/dc-utils.svg?maxAge=2592000)](https://www.npmjs.com/package/dc-utils)
 
-This library was created following the series * How to Write an Open Source JavaScript Library by @kentcdodds for egghead.io *.
+This library was created following the series *How to Write an Open Source JavaScript Library by @kentcdodds for egghead.io*
 
 ## Installation
 
